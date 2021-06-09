@@ -2,12 +2,13 @@
 // import './../component/Jpi.css';
 
 export default function About(props) {
-  const baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&q=Covid%2019`;
   const [recentData, setRecentData] = useState([]);
   const [loading, setLoading] = useState(false);
 
 
   useEffect(() => {
+    const baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&q=Covid%2019`;
+
     async function fetchData() {
       setLoading(true);
    

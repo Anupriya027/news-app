@@ -11,7 +11,7 @@ function Navigation(){
     <div className="Navbar">
       <div className="Lside">
         <div className="Links" id={showLinks ? "hidden" :""}>
-          <a href="./news">Home</a>
+          <a href="/">Home</a>
           <a href="/Covid">Covid</a>
           <a href="/Finance">Finance</a>
           <a href="/International">International</a>

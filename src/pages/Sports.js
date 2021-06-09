@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 // import './../component/Jpi.css';
 
 export default function About(props) {
-  const baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&q=text%3ASports`;
   const [recentData, setRecentData] = useState([]);
   const [loading, setLoading] = useState(false);
 
 
   useEffect(() => {
+    const baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&q=text%3ASports`;
+
     async function fetchData() {
       setLoading(true);
    

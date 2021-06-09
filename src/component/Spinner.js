@@ -1,14 +1,14 @@
-import React from 'react';
-import spinner from '../Assets/spinner.gif';
+import React from "react";
+import spinner from "../Assets/spinner.gif";
 
-export default () => {
+export default function Spinner() {
   return (
     <div>
       <img
         src={spinner}
-        style={{ width: '340px', margin: 'auto', display: 'block' }}
+        style={{ width: "100%", maxWidth: "340px", margin: "auto", display: "block" }}
         alt="Loading..."
       />
     </div>
   );
-};
+}
