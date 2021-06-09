@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2&family=Belgrano&family=Katibeh&family=Playfair+Display:ital@1&family=Prata&display=swap');
+.term {
+    border: 2px solid rgb(100, 143, 107,0.5);
+    border-radius: 20px;
+    width:"auto";
+    max-height: 500px;
+    margin:30px 50px;
+}
+
+.news__title{
+    width: auto;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid rgb(100, 143, 107,0.5);
+}
+
+.news__title a{
+    font-family: 'Prata', serif;
+    text-decoration: none;
+    font-size: 25px;
+    color: rgba(11, 35, 146);
+    margin: 20px 0 20px 0;
+    left: 0px;
+}
+
+.news__desc{
+    font-family: 'Belgarano', sans-serif;
+    color: rgb(0, 0, 0);
+    background-color: whitesmoke;
+    height: 253px;
+    overflow-y: auto;
+}
+
+.news__author{
+    height: auto;
+    text-align: left;
+    color: rgb(114, 113, 113);
+    border-bottom: 2px solid rgb(180, 178, 178) ;
+    margin-bottom: 3px;
+}
+
+

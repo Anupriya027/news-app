@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Cinzel:wght@600&family=Rye&display=swap');
+.Header
+{
+    font-family: 'Rye', cursive;
+    word-spacing: 10px;
+    font-size: 25px;
+    z-index: 1;
+    background-color: rgba(134, 187, 27, 0.5);
+    text-align: center;
+    width: 100%;
+    top:0;
+    overflow-x: hidden;
+    display: block;
+}

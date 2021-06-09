@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2&family=Belgrano&family=Chathura&family=Katibeh&display=swap');
+
+.Navbar{
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+    background-color: rgb(133, 185, 29);
+    height: 50px;
+    width: 100%;
+    font-family: 'Baloo Da 2',cursive;
+    display: flex;
+}
+
+.Navbar .Lside{
+    flex: 70%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    
+}
+
+.Navbar .Lside .Links{
+    max-height: 50px;
+}
+
+.Navbar .Lside .Links a{
+    text-decoration: none;
+    color: rgb(38, 37, 39);
+    font-size: 20px;
+    margin-left: 15px ;
+}
+
+.Navbar .Lside button{
+    display: none;
+    margin-left: 20px;
+}
+
+
+.Navbar .Lside #hidden{
+   display: flex;
+}
+
+
+.Navbar .Rside{
+    flex: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 25px;
+}
+
+
+@media only screen and (max-width: 880px){
+    .Navbar .Lside .Links a{
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width:750px){
+    .Navbar .Lside .Links a{
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 650px){
+    .Navbar .Lside button{
+        display: flex;
+    }
+
+    .Navbar .Lside .Links{
+        display: none;
+    }
+}
+.Navbar .Lside #hidden{
+    position: absolute;
+    left: 0px;
+    top: 50px;
+    height: auto;
+    max-height: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: table-column;
+    align-items: center;
+}
+
+.Navbar .Lside #hidden{
+    margin: 10px;
+    font-size: 25px;
+}
