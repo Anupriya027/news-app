@@ -14,7 +14,7 @@ import Sports from "./pages/Sports";
 import Politics from "./pages/Politics";
 import International from "./pages/International";
 import Navigation from "./component/Navigation";
-// import Searchbar from './component/Searchbar';
+// // import Searchbar from './component/Searchbar';
 
 import { SearchProvider } from "./store";
 
@@ -24,24 +24,26 @@ class App extends Component {
 }*/
   render() {
     return (
-      <div className="App">
-        <SearchProvider>
-          <Header></Header>
-          <Navigation></Navigation>
-          <Router>
+      <Router>
+        <div className="App">
+          <SearchProvider>
+            <Header></Header>
+            <Navigation></Navigation>
+
             <Switch>
-              <Route path="/" component={News} />
-              <Route path="/covid" component={Covid} />
-              <Route path="/Finance" component={Finance} />
-              <Route path="/Sports" component={Sports} />
-              <Route path="/International" component={International} />
-              <Route path="/Politics" component={Politics} />
-              <Route path="/Entertainment" component={Entertainment} />
+              <Route exact path="/" component={News} />
+              <Route exact path="/Covid" component={Covid} />
+              <Route exact path="/Finance" component={Finance} />
+              <Route exact path="/Sports" component={Sports} />
+              <Route exact path="/International" component={International} />
+              <Route exact path="/Politics" component={Politics} />
+              <Route exact path="/Entertainment" component={Entertainment} />
             </Switch>
-          </Router>
-          <Footer />
-        </SearchProvider>
-      </div>
+
+            <Footer />
+          </SearchProvider>
+        </div>
+      </Router>
     );
   }
 }

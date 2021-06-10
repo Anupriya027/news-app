@@ -4,7 +4,7 @@ import "./News.css";
 
 import { useSearchStore } from "./store";
 
-export default function News() {
+export default function News({ query }) {
   const [recentData, setRecentData] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -32,6 +32,7 @@ export default function News() {
 
   return (
     <React.Fragment>
+      {search && <h1>Showing Results for {search} </h1> }
       <NewsCard data={recentData} loading={loading} />
     </React.Fragment>
   );

@@ -36,20 +36,23 @@ const Searchbar = (props) => {
     }
   }
 
+  function submitSearch() {
+      setRecentData([]);
+      setSearch(searchvalue);
+  }
+
   return (
     <React.Fragment>
       <div className="search_bar">
         <input
           onChange={makeChange}
+          onSubmit={submitSearch}
           value={searchvalue}
           type="text"
           placeholder="Search here....."
         />
         <button
-          onClick={() => {
-            setRecentData([]);
-            setSearch(searchvalue);
-          }}
+          onClick={submitSearch}
         >
           <SearchIcon />
         </button>

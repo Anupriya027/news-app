@@ -1,12 +1,20 @@
 import React, { useEffect, useState } from "react";
-// import './../component/Jpi.css';
+import Spinner from "../component/Spinner";
+
+import { useSearchStore } from "../store";
 
 export default function About(props) {
   const [recentData, setRecentData] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  const [search] = useSearchStore();
+
   useEffect(() => {
-    const baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&q=text%3AEntertainment`;
+    let baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&q=text%3AEntertainment`;
+
+    if (search) {
+      baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&q=${search}`;
+    }
 
     async function fetchData() {
       setLoading(true);
@@ -18,12 +26,12 @@ export default function About(props) {
       setRecentData(cdata["docs"]);
     }
     fetchData();
-  }, []);
+  }, [search]);
 
   return (
     <React.Fragment>
-      {loading}
-      {!loading && <NewsCard data={recentData} />}
+      {search && <h1>Showing Results for {search} </h1>}
+      <NewsCard data={recentData} loading={loading} />
     </React.Fragment>
   );
 }
@@ -37,9 +45,6 @@ const NewsArticle = ({
   sectionTitle,
   date,
 }) => {
-  //var x = {text}
-  //var d = x.slice(1,100)
-
   return (
     <div className="term">
       <div className="news__title">
@@ -80,12 +85,14 @@ const NewsArticle = ({
   );
 };
 
-const NewsCard = ({ data }) => {
+const NewsCard = ({ data, loading }) => {
   return (
     <React.Fragment>
       <div className="news_card">
         <div className="newsheader">
           <div className="all__news">
+            {loading ? <Spinner /> : ``}
+
             {data.map((news) => (
               <NewsArticle
                 key={news["article"]["uuid"]}

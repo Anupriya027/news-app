@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from "react";
 // import './../component/Jpi.css';
 
+import { useSearchStore } from "../store";
+
 export default function About(props) {
   const [recentData, setRecentData] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  const [search] = useSearchStore();
 
   useEffect(() => {
-    const baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&q=text%3AInternational`;
+    let baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&q=text%3AInternational`;
+
+    if (search) {
+      baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&q=${search}`;
+    }
 
     async function fetchData() {
       setLoading(true);
@@ -19,7 +26,7 @@ export default function About(props) {
       setRecentData(cdata['docs']);
     };
     fetchData();
-  }, []);
+  }, [search]);
 
 
   return (
