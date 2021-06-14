@@ -8,6 +8,7 @@ const Searchbar = (props) => {
   const [recentData, setRecentData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [searchvalue, setSearchvalue] = useState("");
+  //const [dateValue, setDateValue] = useState(new Date().getTime());
 
   const [, setSearch] = useSearchStore();
 
@@ -38,6 +39,8 @@ const Searchbar = (props) => {
 
   function submitSearch() {
       setRecentData([]);
+
+      // setSearch({name : searchvalue, date: dateValue});
       setSearch(searchvalue);
   }
 
@@ -51,6 +54,14 @@ const Searchbar = (props) => {
           type="text"
           placeholder="Search here....."
         />
+        
+        {/* <input
+          onChange={(e) => setDateValue(new Date(e.target.value).getTime())}
+          onSubmit={submitSearch}
+          type="date"
+          placeholder="Search date"
+        /> */}
+
         <button
           onClick={submitSearch}
         >

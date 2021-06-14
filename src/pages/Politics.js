@@ -10,10 +10,10 @@ export default function About(props) {
   const [search] = useSearchStore();
 
   useEffect(() => {
-    let baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&q=text%3APolitics`;
+    let baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&q=text%3APolitics&t=${new Date().getTime()}`;
 
     if (search) {
-      baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&q=${search}`;
+      baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&q=${search}&t=${new Date().getTime()}`;
     }
 
     async function fetchData() {

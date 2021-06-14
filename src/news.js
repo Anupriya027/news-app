@@ -11,10 +11,14 @@ export default function News({ query }) {
   const [search] = useSearchStore();
 
   useEffect(() => {
-    let baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326`;
+    // since search = { query : "", date : new Date().getTime() }
+    // this should be baseUrl = `${apiUrl}&t=${search.date}`
+
+    let baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&t=${new Date().getTime()}`;
 
     if (search) {
-      baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&q=${search}`;
+      // this should be baseUrl = `${apiUrl}&t=${search.date}&q={search.query}`
+      baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&q=${search}&t=${new Date().getTime()}`;
     }
 
     async function fetchData() {
