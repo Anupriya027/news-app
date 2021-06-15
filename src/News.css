@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2&family=Belgrano&family=Katibeh&family=Playfair+Display:ital@1&family=Prata&display=swap');
+.term {
+    border: 2px solid rgb(100, 143, 107,0.5);
+    border-radius: 20px;
+    width:"auto";
+    max-height: 500px;
+    margin:30px 50px;
+}
+
+.news__title{
+    width: auto;
+    height: 100px;
+    display: flex;
+    background-color:rgb(100, 143, 107,0.1) ;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid rgb(100, 143, 107,0.5);
+}
+
+.news__title a{
+    font-family: 'Prata', serif;
+    text-decoration: none;
+    font-size: 25px;
+    color: rgb(37, 58, 150);
+    margin: 20px 0 20px 0;
+    left: 0px;
+}
+
+.news__desc{
+    font-family: 'Belgarano', sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 22px;
+    background-color: whitesmoke;
+    height: 253px;
+    overflow-y: auto;
+}
+
+.news__author{
+    height: auto;
+    text-align: left;
+    margin: 10px;
+    color: rgb(114, 113, 113);
+    border-bottom: 2px solid rgb(180, 178, 178) ;
+    margin-bottom: 3px;
+}
+
+
+@media (max-width: 600px){
+    .news__title a{
+        font-size: 15px;
+    }
+
+    .news__author{
+        height: auto;
+        text-align: center;
+        font-size: 12px;
+        margin: 10px;
+        color: rgb(114, 113, 113);
+        border-bottom: 2px solid rgb(180, 178, 178) ;
+        margin-bottom: 3px;
+    }
+
+    .news__desc{
+        font-family: 'Belgarano', sans-serif;
+        color: rgb(0, 0, 0);
+        font-size: 12px;
+        background-color: whitesmoke;
+        height: 253px;
+        overflow-y: auto;
+    }
+}
+
+@media (max-width: 790px){
+    .news__title a{
+        font-size: 20px;
+    }
+
+    .news__author{
+        height: auto;
+        text-align: center;
+        font-size: 10px;
+        margin: 10px;
+        color: rgb(114, 113, 113);
+        border-bottom: 2px solid rgb(180, 178, 178) ;
+        margin-bottom: 3px;
+    }
+
+    .news__desc{
+        font-family: 'Belgarano', sans-serif;
+        color: rgb(0, 0, 0);
+        font-size: 18px;
+        background-color: whitesmoke;
+        height: 253px;
+        overflow-y: auto;
+    }
+}
+
+
+
+@media (max-width: 650px){
+    .news__title a{
+        font-size: 17px;
+    }
+
+    .news__author{
+        height: auto;
+        text-align: center;
+        font-size: 10px;
+        margin: 10px;
+        color: rgb(114, 113, 113);
+        border-bottom: 2px solid rgb(180, 178, 178) ;
+        margin-bottom: 3px;
+    }
+
+    .news__desc{
+        font-family: 'Belgarano', sans-serif;
+        color: rgb(0, 0, 0);
+        font-size: 15px;
+        background-color: whitesmoke;
+        height: 253px;
+        overflow-y: auto;
+    }
+}
+
+
+@media (max-width: 380px){
+    .news__title a{
+        font-size: 12px;
+    }
+
+    .news__author{
+        height: auto;
+        text-align: center;
+        font-size: 10px;
+        margin: 10px;
+        color: rgb(114, 113, 113);
+        border-bottom: 2px solid rgb(180, 178, 178) ;
+        margin-bottom: 3px;
+    }
+
+    .news__desc{
+        font-family: 'Belgarano', sans-serif;
+        color: rgb(0, 0, 0);
+        font-size: 8px;
+        background-color: whitesmoke;
+        height: 253px;
+        overflow-y: auto;
+    }
+}
+
+@media (max-width: 300px){
+    .news__title a{
+        font-size: 12px;
+    }
+    .news__author{
+        height: auto;
+        text-align: center;
+        font-size: 8px;
+        margin: 5px;
+        color: rgb(114, 113, 113);
+        border-bottom: 2px solid rgb(180, 178, 178) ;
+        margin-bottom: 3px;
+    }
+
+    .news__desc{
+        font-family: 'Belgarano', sans-serif;
+        color: rgb(0, 0, 0);
+        font-size: 6px;
+        background-color: whitesmoke;
+        height: 280px;
+        overflow-y: auto;
+    }
+}
+
+@media (max-width: 230px){
+    .news__title a{
+        font-size: 5px;
+    }
+
+    .news__author{
+        height: auto;
+        text-align: center;
+        font-size: 4px;
+        margin: 5px;
+        color: rgb(114, 113, 113);
+        border-bottom: 2px solid rgb(180, 178, 178) ;
+        margin-bottom: 3px;
+    }
+
+    .news__desc{
+        font-family: 'Belgarano', sans-serif;
+        color: rgb(0, 0, 0);
+        font-size: 4px;
+        background-color: whitesmoke;
+        height: 280px;
+        overflow-y: auto;
+    }
+}

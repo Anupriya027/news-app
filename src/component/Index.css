@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2&family=Belgrano&family=Chathura&family=Katibeh&display=swap');
+
+.Navbar{
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+    background-color: rgb(133, 185, 29);
+    height: 50px;
+    width: 100%;
+    font-family: 'Baloo Da 2',cursive;
+    font-weight: 100;
+    display: flex;
+}
+
+.Navbar .Lside{
+    
+    display: flex;
+    flex: 60%;
+    justify-content: left;
+    align-items: center;
+    
+}
+
+.Navbar .Lside .Links{
+    max-height: 50px;
+}
+
+.Navbar .Lside .Links a{
+    
+    text-decoration: none;
+    color: rgb(38, 37, 39);
+    font-size: 20px;
+    min-height: 80px;
+    padding: 8px 5px;
+    margin-left: 10px ;
+}
+
+.Navbar .Lside .Links a:hover{
+    
+    color: whitesmoke;
+    background-color: rgba(112, 158, 21, 0.7);
+}
+.Navbar .Lside button{
+    display: none;
+    margin-left: 20px;
+}
+
+
+.Navbar .Lside #hidden{
+   display: flex;
+  
+}
+
+
+.Navbar .Rside{
+    flex: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 25px;
+}
+
+
+@media only screen and (max-width: 960px){
+    .Navbar .Lside .Links a{
+        font-size: 15px;
+        margin-left: 10px;
+       
+    }
+    .Navbar .Lside .Links a:hover{
+    
+        color: whitesmoke;
+        background-color: rgba(112, 158, 21, 0.7);
+    }
+}
+
+@media only screen and (max-width: 830px){
+    .Navbar .Lside .Links a{
+        font-size: 15px;
+        margin-left: 10px;
+    }
+    .Navbar .Lside .Links a:hover{
+    
+        color: whitesmoke;
+        background-color: rgba(112, 158, 21, 0.7);
+    }
+}
+
+@media only screen and (max-width:890px){
+    .Navbar .Lside .Links a{
+        font-size: 15px;
+        margin-left: 10px;
+    }
+    .Navbar .Lside .Links a:hover{
+    
+        color: whitesmoke;
+        background-color: rgba(112, 158, 21, 0.7);
+    }
+}
+
+@media only screen and (max-width: 745px){
+    .Navbar .Lside button{
+        display: flex;
+    }
+    
+
+    .Navbar .Lside .Links{
+        display: none;
+    }
+
+    
+    .Navbar .Lside #hidden{
+        position: absolute;
+        left: 0px;
+        top: 30px;
+        height: auto;
+        max-height: 200px;
+        display: flex;
+        flex-direction: column;
+        transform: scaleY(0.8);
+        /*align-items: left;*/
+    }
+
+    .Navbar .Lside #hidden a{
+        background-color:rgb(186, 238, 81) ;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.Navbar .Lside #hidden{
+
+    font-size: 20px;
+}

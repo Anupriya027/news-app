@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Cinzel:wght@600&family=Rye&display=swap');
+.Header
+{
+    font-family: 'Rye', cursive;
+    word-spacing: 10px;
+    font-size: 25px;
+    z-index: 1;
+    background: linear-gradient(to bottom, white 0%, rgba(134, 187, 27, 0.5) 70%);
+    /*background-color: rgba(134, 187, 27, 0.5);*/
+    text-align: center;
+    width: 100%; color: rgb(77, 41, 41);
+    top:0;
+    overflow-x: hidden;
+    display: block;
+    /*-webkit-animation: Header 1s ease-in-out infinite alternate;
+  -moz-animation: Header 1s ease-in-out infinite alternate;
+  animation: Header 1s ease-in-out infinite alternate;*/
+}
+
+/*@-webkit-keyframes Header {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}*/
+
+@media (max-width: 600px){
+    .Header {
+      font-size: 20px;
+      justify-content: center;
+    }
+  }
+
+
+@media (max-width: 300px){
+    .Header{
+        font-size: 15px;
+        justify-content: center;
+    }
+}
