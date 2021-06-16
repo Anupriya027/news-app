@@ -4,7 +4,9 @@ export const SearchContext = createContext();
 
 export const SearchProvider = (props) => {
   //const [search, setSearch] = useState("");
-  const [search, setSearch] = useState({ query : "", date : new Date().getTime() });   // useState({ query : "", date : new Date().getTime() })
+
+  const [search, setSearch] = useState({ name: "", date: Date.now() }); // useState({ query : "", date : new Date().getTime() })
+
   return (
     <SearchContext.Provider
       value={[search, setSearch]}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import SearchIcon from "@material-ui/icons/Search";
-import DatePicker from 'react-datepicker'
+// import DatePicker from 'react-datepicker'
 import { useSearchStore } from "../store";
 import Spinner from "./Spinner";
 
@@ -24,7 +24,7 @@ const Searchbar = (props) => {
   async function fetchData(search = "") {
     if (search) {
       let baseURL =
-        `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&size=5&q=` +
+        `https://webhose.io/nseFilter?token=3cb756ed-146c-4715-95cf-5040d4c58a13&size=5&q=` +
         search;
 
       setLoading(true);
@@ -38,18 +38,26 @@ const Searchbar = (props) => {
   }
 
   function submitSearch() {
-      setRecentData([]);
-      setDateValue(dateValue);
+    setRecentData([]);
+    setDateValue(dateValue);
 
-      setSearch({name : searchvalue, date: dateValue});
-      // setSearch(searchvalue);
+    setSearch({ name: searchvalue, date: dateValue });
+    // setSearch(searchvalue);
   }
 
   return (
     <React.Fragment>
       <div className="search_bar">
         <input
-          onChange={makeChange}          //<SearchBar message
+          id="datepicker"
+          onChange={(e) => setDateValue(new Date(e.target.value).getTime())}
+          onSubmit={submitSearch}
+          type="date"
+          placeholder="Search date"
+        />
+
+        <input
+          onChange={makeChange} //<SearchBar message
           onSubmit={submitSearch}
           value={searchvalue}
           type="text"
@@ -61,17 +69,9 @@ const Searchbar = (props) => {
         onChange={(e) => setDateValue(new Date(e.target.value).getTime())}
         onSubmit = {submitSearch}
         />*/}
-        <input
-          onChange={(e) => setDateValue(new Date(e.target.value).getTime())}
-          onSubmit={submitSearch}
-          type="date"
-          placeholder="Search date"
-        />
-      
+
         {/*<news query= {dateValue}/> */}
-        <button
-          onClick={submitSearch} 
-        >
+        <button onClick={submitSearch}>
           <SearchIcon />
         </button>
       </div>

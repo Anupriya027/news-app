@@ -4,22 +4,16 @@ import "./News.css";
 
 import { useSearchStore } from "./store";
 
-export default function News({ query }) {
+export default function News() {
   const [recentData, setRecentData] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const [search] = useSearchStore();
 
   useEffect(() => {
-    //let baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326`;
-    let baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&t=${search.date}`;
-     //baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&t=${new Date().getTime()}`;
-
-    if (search.query) {
-      //baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&q=${search}`;
-      baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&t=${search.date}&q=${search.query}`;
-      //baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&q=${search}&t=${new Date().getTime()}`;
-    }
+    let baseURL = `https://webhose.io/nseFilter?token=3cb756ed-146c-4715-95cf-5040d4c58a13&ts=1621239591269&q=${
+      search.name ? `${search.name}%20` : ``
+    }site.country:IN%20published%3A%3C${search.date}`;
 
     async function fetchData() {
       setLoading(true);
@@ -36,7 +30,7 @@ export default function News({ query }) {
 
   return (
     <React.Fragment>
-      {search.query && <h1>Showing Results for {search.query} </h1> }
+      {search.name && <h1>Showing Results for {search.name} </h1>}
       <NewsCard data={recentData} loading={loading} />
     </React.Fragment>
   );

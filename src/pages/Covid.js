@@ -10,11 +10,9 @@ export default function About(props) {
   const [search] = useSearchStore();
 
   useEffect(() => {
-    let baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&q=Covid%2019`;
-
-    if (search) {
-      baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&q=${search}`;
-    }
+    let baseURL = `https://webhose.io/nseFilter?token=3cb756ed-146c-4715-95cf-5040d4c58a13&ts=1621239591269&q=${
+      search.name ? `${search.name}%20` : `covid%20`
+    }site.country:IN%20published%3A%3C${search.date}`;
 
     async function fetchData() {
       setLoading(true);
@@ -30,7 +28,7 @@ export default function About(props) {
 
   return (
     <React.Fragment>
-      {search && <h1>Showing Results for {search} </h1>}
+      {search.name && <h1>Showing Results for {search.name} </h1>}
       <NewsCard data={recentData} loading={loading} />
     </React.Fragment>
   );
