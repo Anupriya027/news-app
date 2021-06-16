@@ -12,11 +12,13 @@ export default function News({ query }) {
 
   useEffect(() => {
     //let baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326`;
-    let baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&t=${new Date().getTime()}`;
+    let baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&t=${search.date}`;
+     //baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&t=${new Date().getTime()}`;
 
-    if (search) {
+    if (search.query) {
       //baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&q=${search}`;
-      baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&q=${search}&t=${new Date().getTime()}`;
+      baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&t=${search.date}&q=${search.query}`;
+      //baseURL = `https://webhose.io/nseFilter?token=1c46f8bd-3693-4b1f-871e-abcf63e8f326&q=${search}&t=${new Date().getTime()}`;
     }
 
     async function fetchData() {
@@ -34,7 +36,7 @@ export default function News({ query }) {
 
   return (
     <React.Fragment>
-      {search && <h1>Showing Results for {search} </h1> }
+      {search.query && <h1>Showing Results for {search.query} </h1> }
       <NewsCard data={recentData} loading={loading} />
     </React.Fragment>
   );

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import SearchIcon from "@material-ui/icons/Search";
 import DatePicker from 'react-datepicker'
-import 'react-datepicker/dist/react-datepicker.css'
 import { useSearchStore } from "../store";
 import Spinner from "./Spinner";
 
 const Searchbar = (props) => {
+  //var query="";
   const [recentData, setRecentData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [searchvalue, setSearchvalue] = useState("");
@@ -39,26 +39,36 @@ const Searchbar = (props) => {
 
   function submitSearch() {
       setRecentData([]);
+      setDateValue(dateValue);
+
       setSearch({name : searchvalue, date: dateValue});
-      //setSearch(searchvalue);
+      // setSearch(searchvalue);
   }
 
   return (
     <React.Fragment>
       <div className="search_bar">
         <input
-          onChange={makeChange}
+          onChange={makeChange}          //<SearchBar message
           onSubmit={submitSearch}
           value={searchvalue}
           type="text"
           placeholder="Search here....."
         />
 
-        <DatePicker
+        {/*<DatePicker
         selected = {dateValue}
         onChange={(e) => setDateValue(new Date(e.target.value).getTime())}
         onSubmit = {submitSearch}
+        />*/}
+        <input
+          onChange={(e) => setDateValue(new Date(e.target.value).getTime())}
+          onSubmit={submitSearch}
+          type="date"
+          placeholder="Search date"
         />
+      
+        {/*<news query= {dateValue}/> */}
         <button
           onClick={submitSearch} 
         >
